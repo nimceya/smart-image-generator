@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Smart Image Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f5;
+      color: #18181b;
+    }
+
+    header {
+      padding: 30px;
+      text-align: center;
+      background: #18181b;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .gallery {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+      );
+
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info {
+      padding: 18px;
+    }
+
+    .info h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .info p {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #52525b;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 4px 4px 4px 0;
+      border-radius: 20px;
+      background: #e4e4e7;
+      font-size: 12px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 50px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎨 Smart Image Gallery</h1>
+    <p>OpenRouter Image Generation Collection</p>
+  </header>
+
+  <main id="gallery" class="gallery"></main>
+
+  <script>
+    async function loadGallery() {
+      const gallery = document.getElementById("gallery");
+
+      try {
+        const response = await fetch("/api/images");
+
+        const images = await response.json();
+
+        if (images.length === 0) {
+          gallery.innerHTML = `
+            <div class="empty">
+              🖼️ No images generated yet.
+            </div>
+          `;
+
+          return;
+        }
+
+        images.forEach((image) => {
+          const card = document.createElement("div");
+
+          card.className = "card";
+
+          card.innerHTML = `
+            <img
+              src="/generated/${image.filename}"
+              alt="${image.theme}"
+            />
+
+            <div class="info">
+
+              <h2>${image.theme}</h2>
+
+              <span class="badge">
+                ${image.model}
+              </span>
+
+              <span class="badge">
+                ${image.size}
+              </span>
+
+              <span class="badge">
+                ${image.style}
+              </span>
+
+              <p>
+                💰 Cost:
+                $${image.cost ?? "N/A"}
+              </p>
+
+              <p>
+                📅
+                ${new Date(
+                  image.createdAt
+                ).toLocaleString()}
+              </p>
+
+              <p>
+                ✨ ${image.enhancedPrompt}
+              </p>
+
+            </div>
+          `;
+
+          gallery.appendChild(card);
+        });
+
+      } catch (error) {
+        gallery.innerHTML = `
+          <div class="empty">
+            ❌ Failed to load gallery.
+          </div>
+        `;
+
+        console.error(error);
+      }
+    }
+
+    loadGallery();
+  </script>
+
+</body>
+</html>
