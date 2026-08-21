@@ -1,0 +1,14 @@
+{
+  "id": "1787343508171",
+  "theme": "cyberpunk city",
+  "enhancedPrompt": "A sprawling cyberpunk cityscape at night, featuring towering skyscrapers adorned with neon lights and holographic advertisements. The foreground showcases a bustling street filled with diverse futuristic characters clad in stylish, high-tech attire. The environment is a mix of advanced technology and urban decay, with rain-slicked streets reflecting vibrant colors. Dramatic, moody lighting casts deep shadows, while bright neon pinks, blues, and greens illuminate the scene. The atmosphere is electric, charged with a sense of excitement and mystery, as flying cars zip through the sky and steam rises from street vendor stalls. Important visual details include intricate architecture, digital billboards flickering with animations, and a distant view of a massive, illuminated clock tower dominating the skyline.",
+  "finalPrompt": "A sprawling cyberpunk cityscape at night, featuring towering skyscrapers adorned with neon lights and holographic advertisements. The foreground showcases a bustling street filled with diverse futuristic characters clad in stylish, high-tech attire. The environment is a mix of advanced technology and urban decay, with rain-slicked streets reflecting vibrant colors. Dramatic, moody lighting casts deep shadows, while bright neon pinks, blues, and greens illuminate the scene. The atmosphere is electric, charged with a sense of excitement and mystery, as flying cars zip through the sky and steam rises from street vendor stalls. Important visual details include intricate architecture, digital billboards flickering with animations, and a distant view of a massive, illuminated clock tower dominating the skyline.\n\nVisual style: cinematic lighting, dramatic atmosphere, movie-like composition\nHigh quality, detailed composition, strong lighting, visually polished.",
+  "model": "openai/gpt-image-1",
+  "size": "landscape",
+  "aspectRatio": "3:2",
+  "style": "cinematic",
+  "stylePrompt": "cinematic lighting, dramatic atmosphere, movie-like composition",
+  "filename": "cyberpunk-city-landscape-cinematic-1787343508171.png",
+  "createdAt": "2026-08-21T20:18:28.174Z",
+  "cost": 0.249205
+}

@@ -1,0 +1,13 @@
+{
+  "id": "1787342848406",
+  "theme": "cyberpunk cityscape",
+  "enhancedPrompt": "cyberpunk cityscape\n\nVisual style: cinematic lighting, dramatic atmosphere, movie-like composition\nHigh quality, detailed composition, strong lighting, visually polished.",
+  "model": "openai/gpt-image-1",
+  "size": "landscape",
+  "aspectRatio": "3:2",
+  "style": "cinematic",
+  "stylePrompt": "cinematic lighting, dramatic atmosphere, movie-like composition",
+  "filename": "cyberpunk-cityscape-landscape-cinematic-1787342848406.png",
+  "createdAt": "2026-08-21T20:07:28.408Z",
+  "cost": 0.248505
+}
